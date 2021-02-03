@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.wav
+Assets/Madlib - Hopprock.wav.meta
+Assets/Crystal Castles - Magic Spells.wav.meta
