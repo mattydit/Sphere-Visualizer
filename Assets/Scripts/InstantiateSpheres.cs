@@ -27,7 +27,7 @@ public class InstantiateSpheres : MonoBehaviour
             sphere.transform.parent = sphereFrame.transform;
             //sphere.GetComponent<Renderer>().material = mat1;
 
-            int band = countOfBand % 8;
+            int band = countOfBand % 9;
             sphere.GetComponent<SphereParticle>().audioBand = band;
             countOfBand++;
 

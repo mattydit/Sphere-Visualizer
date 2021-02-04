@@ -232,7 +232,6 @@ MonoBehaviour:
   maxSpheres: 300
   points: []
   audioAnalysis: {fileID: 417371218}
-  band: 2
   spherePrefab: {fileID: 4558508987647164993, guid: 4f5f4da612f44c34ebab3c4f31dd2ab1,
     type: 3}
   mat1: {fileID: 2100000, guid: f1a189502e0ce6c44b237d6afcdec19a, type: 2}
@@ -313,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415261487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -19.64}
+  m_LocalPosition: {x: 0, y: 1, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -366,7 +365,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 728f0021a46e6ec4fafb5bf6178491a8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 58e11d389b12e7e448c35a983171cdd5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

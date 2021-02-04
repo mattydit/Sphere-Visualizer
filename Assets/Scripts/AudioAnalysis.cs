@@ -39,7 +39,7 @@ public class AudioAnalysis : MonoBehaviour
         binWidth = AudioSettings.outputSampleRate / 2 / frameSize;
         audioSrc = GetComponent<AudioSource>();
 
-        audioSrc.Play();
+        //audioSrc.Play();
     }
 
     // Update is called once per frame
