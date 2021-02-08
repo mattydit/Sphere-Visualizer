@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InstantiateSpheres : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject sphereFrame;
     public List<GameObject> sphereList;
     public int maxSpheres;
@@ -27,7 +28,7 @@ public class InstantiateSpheres : MonoBehaviour
             sphere.transform.parent = sphereFrame.transform;
             //sphere.GetComponent<Renderer>().material = mat1;
 
-            int band = countOfBand % 9;
+            int band = countOfBand % 7;
             sphere.GetComponent<SphereParticle>().audioBand = band;
             countOfBand++;
 
@@ -38,10 +39,13 @@ public class InstantiateSpheres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < sphereList.Count; i++)
+        if (audioSource.isPlaying)
         {
-            int band = sphereList[i].GetComponent<SphereParticle>().audioBand;
-            sphereList[i].transform.position = Vector3.Lerp(points[i] * 5, sphereList[i].transform.position * 1.3f, audioAnalysis.audioBandBuffer[band]);
+            for (int i = 0; i < sphereList.Count; i++)
+            {
+                int band = sphereList[i].GetComponent<SphereParticle>().audioBand;
+                sphereList[i].transform.position = Vector3.Lerp(points[i] * 5, sphereList[i].transform.position * 1.3f, audioAnalysis.audioBandBuffer[band]);
+            }
         }
     }
 

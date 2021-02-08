@@ -38,13 +38,16 @@ public class AudioAnalysis : MonoBehaviour
         sampleRate = AudioSettings.outputSampleRate;
         binWidth = AudioSettings.outputSampleRate / 2 / frameSize;
         audioSrc = GetComponent<AudioSource>();
-
-        //audioSrc.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            audioSrc.Play();
+        }
+
         GetSpectrumAudioSource();
         GetFrequencyBands();
         BandBuffer();
@@ -74,7 +77,7 @@ public class AudioAnalysis : MonoBehaviour
             average /= (float)width;
             bands[i] = average;
         }
-
+        //Debug.Log("Frequency Bands: " + (bands.Length));
     }
 
     void BandBuffer()
