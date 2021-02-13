@@ -39,21 +39,15 @@ public class InstantiateSpheres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (audioSource.isPlaying)
-        {
-            for (int i = 0; i < sphereList.Count; i++)
-            {
-                int band = sphereList[i].GetComponent<SphereParticle>().audioBand;
-                sphereList[i].transform.position = Vector3.Lerp(points[i] * 5, sphereList[i].transform.position * 1.3f, audioAnalysis.audioBandBuffer[band]);
-            }
-        }
+        ReactiveSpheres();
     }
 
     Vector3[] GetPointsOnSphere(int numOfPoints)
     {
         /*
         http://web.archive.org/web/20120421191837/http://cgafaq.info/wiki/Evenly_distributed_points_on_sphere
-
+        Arranging nodes in a spiral
+        
         dlong := pi*(3-sqrt(5))   //~2.39996323
         dz    := 2.0/N
         long := 0
@@ -82,5 +76,18 @@ public class InstantiateSpheres : MonoBehaviour
         }
 
         return points; 
+    }
+
+    void ReactiveSpheres()
+    {
+        if (audioSource.isPlaying)
+        {
+            for (int i = 0; i < sphereList.Count; i++)
+            {
+                int band = sphereList[i].GetComponent<SphereParticle>().audioBand;
+                sphereList[i].transform.position = Vector3.Lerp(points[i] * 5, 
+                sphereList[i].transform.position * 1.3f, audioAnalysis.audioBandBuffer[band]);
+            }
+        }
     }
 }
